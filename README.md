@@ -10,3 +10,6 @@ Throughout these projects, I actively apply various technologies and tools inclu
 The projects demonstrate not only my coding skills but also my ability to work with diverse tech stacks, apply best practices, and design solutions with scalability, maintainability, and data integrity in mind.
 
 ⚠ Note: This repository is still a work in progress. Some projects are still being finalized or are ready to be added. I am continuously expanding the repository as I complete, polish, and document additional projects.
+
+Feedback welcome:
+If you have any suggestions, feedback, or ideas regarding these projects, feel free to reach out — I’d be happy to discuss and learn from your insights!
