@@ -10,17 +10,25 @@ The current version focuses on the mechanic's interface, providing essential too
 # Current Features
 
 Internal panel for mechanic use
+
 Manage inventory of parts and components
+
 Track client vehicles and their full service history
+
 Schedule and log future visits
+
 Order new parts directly from the system
 
 # Planned Features
 
 Client-side login and interaction portal
+
 Role-based access (e.g., Admin, Front Desk, Mechanic)
+
 Persistent external database integration
+
 Advanced service scheduling and automated reminders
+
 Service status tracking and client notifications
 
 # Technologies Used
