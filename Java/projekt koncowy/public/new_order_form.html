@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Nowe Zamówienie</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .inline-link {
+      display: block;
+      margin-top: 5px;
+      font-size: 14px;
+      color: #1976d2;
+      text-decoration: none;
+    }
+    .inline-link:hover {
+      text-decoration: underline;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #125a9e;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #1976d2;
+    }
+  </style>
+</head>
+<body>
+<h2 style="text-align:center">Złóż nowe zamówienie</h2>
+<form method="POST" action="/orders">
+  <label for="parts">Wybierz części do zamówienia (przytrzymaj Ctrl/Cmd):</label>
+  <select name="parts" id="parts" multiple required>
+    <!-- OPCJE_CZESCI -->
+  </select>
+  <a class="inline-link" href="/parts/new">Dodaj nową część</a>
+
+  <label for="comments">Dodatkowe informacje / uwagi:</label>
+  <input type="text" id="comments" name="comments">
+
+  <button type="submit">Zapisz zamówienie</button>
+</form>
+<a href="/home" class="back-link">Powrót do menu</a>
+</body>
+</html>

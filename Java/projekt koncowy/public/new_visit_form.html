@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Nowa Wizyta</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    select, input[type="text"], input[type="date"], textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    textarea {
+      height: 100px;
+    }
+    .inline-options {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    .inline-options a {
+      text-decoration: none;
+      color: #1976d2;
+    }
+    .submit-btn {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #125a9e;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 25px;
+      text-decoration: none;
+      color: #1976d2;
+    }
+  </style>
+</head>
+<body>
+<h1>Nowa wizyta serwisowa</h1>
+<form method="POST" action="/visits/new">
+  <label>Wybierz klienta:</label>
+  <select name="client" id="client" required>
+    <!-- OPCJE_KLIENTOW -->
+  </select>
+  <div class="inline-options">
+    <a href="/clients/new">Dodaj nowego klienta</a>
+  </div>
+
+  <label>Wybierz samochód:</label>
+  <select name="car" id="car" required>
+    <option value="">-- Wybierz samochód --</option>
+    <!-- OPCJE_SAMOCHODOW -->
+  </select>
+  <div class="inline-options">
+    <a href="/cars/new">Dodaj nowy samochód</a>
+  </div>
+
+  <label>Data wizyty:</label>
+  <input type="date" name="date" required>
+
+  <label>Opis usługi:</label>
+  <textarea name="description" required></textarea>
+
+  <label>Wybierz części (przytrzymaj Ctrl/Cmd, aby wybrać kilka):</label>
+  <select name="parts" multiple>
+    <!-- OPCJE_CZESCI -->
+  </select>
+
+  <label>Koszt usługi (PLN):</label>
+  <input type="text" name="cost" required>
+
+  <input class="submit-btn" type="submit" value="Zapisz wizytę">
+</form>
+<a href="/home" class="back-link">Powrót do menu</a>
+
+<script>
+  const clientSelect = document.getElementById("client");
+  const carSelect = document.getElementById("car");
+  const allOptions = Array.from(carSelect.options).filter(o => o.value);
+
+  function updateCarsForClient(email) {
+    carSelect.innerHTML = '<option value="">-- Wybierz samochód --</option>';
+    allOptions.forEach(opt => {
+      if (opt.dataset.owner === email) {
+        carSelect.appendChild(opt.cloneNode(true));
+      }
+    });
+  }
+
+  clientSelect.addEventListener("change", () => {
+    updateCarsForClient(clientSelect.value);
+  });
+
+  updateCarsForClient("");
+</script>
+</body>
+</html>

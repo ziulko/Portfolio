@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Dodaj Samochód</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #125a9e;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #1976d2;
+    }
+  </style>
+</head>
+<body>
+<h2 style="text-align:center">Dodaj nowy samochód</h2>
+
+<form method="POST" action="/cars/new">
+  <label for="ownerEmail">Wybierz klienta (email):</label>
+  <select id="ownerEmail" name="ownerEmail" required>
+    <option value="">-- Wybierz klienta --</option>
+    <!-- opcje klientów do uzupełnienia dynamicznie -->
+  </select>
+
+
+  <label for="brand">Marka:</label>
+  <input type="text" id="brand" name="brand" required>
+
+  <label for="model">Model:</label>
+  <input type="text" id="model" name="model" required>
+
+  <label for="year">Rok produkcji:</label>
+  <select id="year" name="year" required>
+    <option value="">-- Wybierz rok --</option>
+  </select>
+
+  <label for="vin">Numer VIN:</label>
+  <input type="text" id="vin" name="vin" pattern="[A-HJ-NPR-Z0-9]{17}" title="17 znaków, bez liter I, O i Q" required>
+
+  <button type="submit">Zapisz samochód</button>
+</form>
+
+<a href="/visits/new" class="back-link">Powrót</a>
+
+<script>
+  const yearSelect = document.getElementById("year");
+  const currentYear = new Date().getFullYear();
+  const earliestYear = 1886;
+
+  for (let y = currentYear; y >= earliestYear; y--) {
+    const option = document.createElement("option");
+    option.value = y;
+    option.textContent = y;
+    yearSelect.appendChild(option);
+  }
+</script>
+
+</body>
+</html>

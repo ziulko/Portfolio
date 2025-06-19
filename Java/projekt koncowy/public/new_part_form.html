@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Dodaj Część</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #125a9e;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #1976d2;
+    }
+  </style>
+</head>
+<body>
+<h2 style="text-align:center">Dodaj nową część</h2>
+
+<form method="POST" action="/parts/new">
+  <label for="name">Nazwa części:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="manufacturer">Producent:</label>
+  <input type="text" id="manufacturer" name="manufacturer" required>
+
+  <label for="price">Cena (zł):</label>
+  <input type="number" step="0.01" id="price" name="price" required>
+
+  <label for="quantity">Ilość:</label>
+  <input type="number" id="quantity" name="quantity" required>
+
+  <label for="category">Kategoria:</label>
+  <select id="category" name="category" required>
+    <option value="ESSENTIAL">ESSENTIAL</option>
+    <option value="COMFORT">COMFORT</option>
+    <option value="SAFETY">SAFETY</option>
+    <option value="MAINTENANCE">MAINTENANCE</option>
+    <option value="ELECTRONICS">ELECTRONICS</option>
+    <option value="BODYWORK">BODYWORK</option>
+    <option value="OTHER">OTHER</option>
+  </select>
+
+  <label for="warranty">Gwarancja (miesiące):</label>
+  <input type="number" id="warranty" name="warranty" required>
+
+  <button type="submit">Dodaj część</button>
+</form>
+
+<a href="/home" class="back-link">Powrót do menu</a>
+</body>
+</html>

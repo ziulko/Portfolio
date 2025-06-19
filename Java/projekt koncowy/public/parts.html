@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Magazyn Części</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #1976d2;
+      color: white;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #1976d2;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    a.button:hover {
+      background-color: #125a9e;
+    }
+  </style>
+</head>
+<body>
+<h1>Stan magazynowy części</h1>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nazwa</th>
+    <th>Producent</th>
+    <th>Cena (zł)</th>
+    <th>Ilość</th>
+    <th>Kategoria</th>
+    <th>Gwarancja</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <!-- Wiersze części zostaną wstawione dynamicznie przez Java -->
+  </tbody>
+</table>
+<a href="/home" class="button">Powrót do menu</a>
+</body>
+</html>

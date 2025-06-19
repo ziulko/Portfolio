@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Mechanika</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 40px;
+      color: #333;
+    }
+
+    .menu {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .menu a button {
+      width: 220px;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .menu a button:hover {
+      background-color: #125a9e;
+    }
+  </style>
+</head>
+<body>
+<h1>Panel mechanika</h1>
+<div class="menu">
+  <a href="/orders"><button>Złóż zamówienie</button></a>
+  <a href="/visits/new"><button>Nowa wizyta</button></a>
+  <a href="/clients"><button>Lista klientów</button></a>
+  <a href="/parts"><button>Magazyn części</button></a>
+  <a href="/notifications"><button>Powiadomienia</button></a>
+  <a href="/logout"><button>Wyloguj się</button></a>
+</div>
+</body>
+</html>
